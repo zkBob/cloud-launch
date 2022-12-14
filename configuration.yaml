@@ -1,0 +1,19 @@
+application:
+  host: 0.0.0.0
+  port: 8000
+  db_path: none
+  tx:
+    vk: params/transfer_verification_key.json
+    params: params/transfer_params.bin
+  tree:
+    params: params/tree_params.bin
+web3:
+  provider_endpoint: http://rpc.none
+  pool_address: deadface
+  start_block: 0
+  relayer_fee: 100000000
+custody:
+  db_path: none
+  relayer_url: http://relayer.none
+  admin_token: p@ssword
+  sync_interval_sec: 30

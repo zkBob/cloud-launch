@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  zkbob-cloud:
+    image: ghcr.io/zkbob/zkbob-cloud:${RELAYER_IMAGE:-custody}
+    restart: unless-stopped
+    container_name: zkbob-cloud
+    env_file: .env
+    volumes: 
+      - ./params:/app/params
+      - ./configuration.yaml:/app/configuration/${APP_ENVIRONMENT}.yaml
+      - ./state_db:/app/${APP_APPLICATION__DB_PATH}
+      - ./custody_db:/app/${APP_CUSTODY__DB_PATH}
+    ports:
+      - ${APP_APPLICATION__PORT}:${APP_APPLICATION__PORT}
+    logging:
+      driver: syslog
+      options: { tag: '{{.Name}}/{{.ID}}'} 
