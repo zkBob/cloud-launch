@@ -7,7 +7,7 @@ This repo contains files for rapid launch of [zkBob Api and Cloud Wallet](https:
 
 ## Configuration
 
-1) Create an empty directory somewhere on the VM (e.g. `/opt/cloud`)
+1) Create an empty directory somewhere on the system (e.g. `/opt/cloud`)
 2) Clone the repository with all necessary configs:
 ```bash
 cd /opt/cloud
